@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TruthScan – Know what's in your food</title>
+  <meta name="description" content="Scan a packaged food barcode and get a simple health rating, hidden sugars, additives and allergens.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f7a4d'/%3E%3Cpath d='M8 9v14M11 9v14M14 9v14M18 9v14M21 9v14M24 9v14' stroke='white' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <a class="logo" href="index.html">Truth<span>Scan</span></a>
+      <nav>
+        <a href="index.html">Scan</a>
+        <a href="profile.html">My profile</a>
+        <a href="submit.html">Add product</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="card scan-hero">
+      <h1>Know what's really in your food</h1>
+      <p class="muted">Point your camera at the barcode on any packaged food.</p>
+
+      <div id="reader" class="hidden"></div>
+      <div id="frameDecoder" class="hidden"></div>
+      <p class="muted small">Tip: fill the box with the barcode and keep it steady in good light.</p>
+
+      <div class="row" style="justify-content:center">
+        <button id="startScan" class="btn">Start camera scan</button>
+        <button id="stopScan" class="btn secondary hidden">Stop</button>
+        <label class="btn secondary" style="margin:0">
+          Scan from photo
+          <input id="scanFile" type="file" accept="image/*" class="hidden">
+        </label>
+      </div>
+      <div id="scanMessage" class="notice error hidden"></div>
+    </section>
+
+    <section class="card">
+      <h2>Type the barcode</h2>
+      <form id="barcodeForm" class="row">
+        <input id="barcodeInput" inputmode="numeric" pattern="[0-9]{8,14}" placeholder="e.g. 8901058851298"
+               aria-label="Barcode number" required>
+        <button class="btn" type="submit">Check product</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    Ratings are for general information only and are not medical advice.<br>
+    Product data partly from <a href="https://world.openfoodfacts.org" target="_blank" rel="noopener">Open Food Facts</a> (ODbL).
+  </footer>
+
+  <!-- html5-qrcode 2.3.8 (Apache-2.0), served from our own server so scanning never depends on a CDN -->
+  <script src="html5-qrcode.min.js"></script>
+  <script src="common.js"></script>
+  <script src="home.js"></script>
+</body>
+</html>

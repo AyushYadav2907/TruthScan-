@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My health profile – TruthScan</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f7a4d'/%3E%3Cpath d='M8 9v14M11 9v14M14 9v14M18 9v14M21 9v14M24 9v14' stroke='white' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <a class="logo" href="index.html">Truth<span>Scan</span></a>
+      <nav>
+        <a href="index.html">Scan</a>
+        <a href="profile.html">My profile</a>
+        <a href="submit.html">Add product</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h1>My health profile</h1>
+      <p class="muted">Pick what matters to you and every product page will show personal warnings.
+        Your choices are saved only in this browser and are never stored on our server.</p>
+
+      <form id="profileForm">
+        <h2>Health goals and conditions</h2>
+        <div id="conditions" class="checks"></div>
+
+        <h2 style="margin-top:20px">Allergies</h2>
+        <div id="allergies" class="checks"></div>
+
+        <div class="row" style="margin-top:20px">
+          <button class="btn" type="submit">Save profile</button>
+          <button class="btn secondary" type="button" id="clearBtn">Clear</button>
+        </div>
+      </form>
+      <div id="saved" class="notice hidden"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">Warnings are general guidance, not medical advice. Follow your doctor's advice.</footer>
+
+  <script src="common.js"></script>
+  <script src="profile.js"></script>
+</body>
+</html>

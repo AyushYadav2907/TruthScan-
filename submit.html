@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add a product – TruthScan</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f7a4d'/%3E%3Cpath d='M8 9v14M11 9v14M14 9v14M18 9v14M21 9v14M24 9v14' stroke='white' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <a class="logo" href="index.html">Truth<span>Scan</span></a>
+      <nav>
+        <a href="index.html">Scan</a>
+        <a href="profile.html">My profile</a>
+        <a href="submit.html">Add product</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h1>Add a missing product</h1>
+      <p class="muted">Copy the details from the pack. The product is saved on this device only and rated right away.</p>
+
+      <div id="formMessage" class="hidden"></div>
+
+      <form id="submitForm" novalidate>
+        <div class="grid-2">
+          <div class="field">
+            <label for="barcode">Barcode *</label>
+            <input id="barcode" name="barcode" inputmode="numeric" pattern="[0-9]{8,14}" required>
+          </div>
+          <div class="field">
+            <label for="name">Product name *</label>
+            <input id="name" name="name" maxlength="255" required>
+          </div>
+          <div class="field">
+            <label for="brand">Brand</label>
+            <input id="brand" name="brand" maxlength="255">
+          </div>
+          <div class="field">
+            <label for="category">Category</label>
+            <input id="category" name="category" maxlength="255" list="categoryList"
+                   placeholder="e.g. Biscuits, Beverages">
+            <datalist id="categoryList">
+              <option value="Biscuits"><option value="Snacks"><option value="Instant noodles">
+              <option value="Breakfast cereals"><option value="Chocolates"><option value="Beverages">
+              <option value="Juices"><option value="Dairy"><option value="Sauces"><option value="Bakery">
+            </datalist>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="ingredientsText">Ingredients (as printed)</label>
+          <textarea id="ingredientsText" name="ingredientsText" maxlength="5000"
+                    placeholder="Refined wheat flour (maida), sugar, edible vegetable oil (palm oil), ..."></textarea>
+        </div>
+
+        <h2>Nutrition per 100 g (or 100 ml)</h2>
+        <p class="muted small">Use the "per 100 g" column, not "per serving". If only sodium is listed, salt = sodium (g) × 2.5.</p>
+        <div class="grid-2">
+          <div class="field"><label for="energyKcal">Energy (kcal)</label><input id="energyKcal" name="energyKcal" type="number" step="0.1" min="0" max="900"></div>
+          <div class="field"><label for="sugar">Sugar (g) *</label><input id="sugar" name="sugar" type="number" step="0.01" min="0" max="100"></div>
+          <div class="field"><label for="fat">Total fat (g)</label><input id="fat" name="fat" type="number" step="0.01" min="0" max="100"></div>
+          <div class="field"><label for="saturatedFat">Saturated fat (g) *</label><input id="saturatedFat" name="saturatedFat" type="number" step="0.01" min="0" max="100"></div>
+          <div class="field"><label for="salt">Salt (g) *</label><input id="salt" name="salt" type="number" step="0.001" min="0" max="100"></div>
+          <div class="field"><label for="fiber">Fibre (g)</label><input id="fiber" name="fiber" type="number" step="0.01" min="0" max="100"></div>
+          <div class="field"><label for="protein">Protein (g)</label><input id="protein" name="protein" type="number" step="0.01" min="0" max="100"></div>
+        </div>
+        <p class="muted small">* Sugar, saturated fat and salt are needed for a rating.</p>
+
+        <div class="field">
+          <label for="allergens">Allergen statement</label>
+          <input id="allergens" name="allergens" maxlength="1000" placeholder="e.g. milk, soy, gluten">
+        </div>
+        
+
+        <button class="btn" type="submit" id="submitBtn">Submit for review</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">Thank you for helping make food labels easier to understand.</footer>
+
+  <script src="common.js"></script>
+  <script src="engine.js"></script>
+  <script src="submit.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About & method – TruthScan</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f7a4d'/%3E%3Cpath d='M8 9v14M11 9v14M14 9v14M18 9v14M21 9v14M24 9v14' stroke='white' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <a class="logo" href="index.html">Truth<span>Scan</span></a>
+      <nav>
+        <a href="index.html">Scan</a>
+        <a href="profile.html">My profile</a>
+        <a href="submit.html">Add product</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h1>About TruthScan</h1>
+      <p>TruthScan turns confusing food labels into a simple rating, so you can compare packaged foods in seconds.</p>
+    </section>
+
+    <section class="card">
+      <h2>How the rating works</h2>
+      <p>Every product starts at 5 and loses points for nutrients that are high per 100 g (or 100 ml for drinks):</p>
+      <table>
+        <tr><th>Nutrient</th><th>Low (food)</th><th>High (food)</th><th>High (drinks)</th></tr>
+        <tr><td>Sugar</td><td class="num">≤ 5 g</td><td class="num">&gt; 22.5 g</td><td class="num">&gt; 11.25 g</td></tr>
+        <tr><td>Total fat</td><td class="num">≤ 3 g</td><td class="num">&gt; 17.5 g</td><td class="num">&gt; 8.75 g</td></tr>
+        <tr><td>Saturated fat</td><td class="num">≤ 1.5 g</td><td class="num">&gt; 5 g</td><td class="num">&gt; 2.5 g</td></tr>
+        <tr><td>Salt</td><td class="num">≤ 0.3 g</td><td class="num">&gt; 1.5 g</td><td class="num">&gt; 0.75 g</td></tr>
+      </table>
+      <ul class="reasons" style="margin-top:12px">
+        <li>High sugar −1.5, high saturated fat −1, high salt −1, high fat −0.5; moderate sugar, saturated fat or salt lose 0.5 each.</li>
+        <li>More than double the "high" limit (e.g. 3 g salt per 100 g) loses another 0.5.</li>
+        <li>Foods above 400 kcal per 100 g lose 0.5; above 500 kcal they lose 1.</li>
+        <li>Drinks: moderate sugar −2, high sugar −2.5, and another −1 above 5 g sugar per 100 ml.</li>
+        <li>Ingredients of concern (e.g. hydrogenated fats, certain colours, preservatives and sweeteners) lose up to 1.5.</li>
+        <li>Fibre and protein add up to 0.75, but not when a product is high in two or more of sugar, saturated fat and salt.</li>
+        <li>The result is rounded to the nearest 0.5, between 1 and 5.</li>
+        <li>If sugar, saturated fat or salt is missing, we show "Not enough data" rather than guess.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Data sources</h2>
+      <p>Product data comes partly from <a href="https://world.openfoodfacts.org" target="_blank" rel="noopener">Open Food Facts</a>,
+        a free, collaborative database, made available under the
+        <a href="https://opendatacommons.org/licenses/odbl/1-0/" target="_blank" rel="noopener">Open Database License</a>.
+        Products you add yourself are saved only on your own device.</p>
+    </section>
+
+    <section class="card">
+      <h2>Disclaimer</h2>
+      <p>Ratings and warnings are general information based on the label data available to us. They are not medical
+        advice. Labels change and data can contain mistakes, so always read the pack, especially if you have an allergy,
+        and follow your doctor's or dietitian's advice.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">© TruthScan</footer>
+  <script src="common.js"></script>
+</body>
+</html>
